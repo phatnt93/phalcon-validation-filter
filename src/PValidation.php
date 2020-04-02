@@ -2,14 +2,15 @@
 
 
 /** 
-* Detect SSL Domain Expired
-* 
-* Made by Phatnt
+* PValidation Library
+* Help validate and filter quickly.
+*
+* Made by phatnt93
 * 02/04/2020
 * 
 * @license MIT License
 * @author phatnt <thanhphat.uit@gmail.com>
-* @github https://github.com/phatnt93/python_detect_domain_ssl
+* @github https://github.com/phatnt93/phalcon-validation-filter
 * @version 1.0.0
 * 
 */
