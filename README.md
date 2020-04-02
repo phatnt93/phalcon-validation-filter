@@ -5,6 +5,9 @@ This library help validate or filter params quickly.
 - PHP >= 5.6
 - Phalcon Framework = 3.*
 
+## Install with composer
+composer require phatnt93/phalcon-validation-filter
+
 ## Example for validations
 
 ```
