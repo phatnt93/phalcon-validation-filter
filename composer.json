@@ -1,0 +1,15 @@
+{
+    "require-dev": {
+        "phpunit/phpunit": "9"
+    },
+    "autoload": {
+        "psr-4": {
+            "PhalconValidation\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}
