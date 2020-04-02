@@ -1,24 +1,74 @@
-// $demo = new PValidation();
+# Getting started
+This library help validate or filter params quickly.
 
-// $data = [
-//  'name' => 'phat12313111<span>kaka</span>'
-// ];
+## Required
+- PHP >= 5.6
+- Phalcon Framework = 3.*
 
-// $validateParams = [
-//  'name' => ['required', 'alpha_numeric']
-// ];
+## Example for validations
 
-// $filterParams = [
-//  'name' => ['int']
-// ];
+```
+use \PhalconValidation\PValidation;
 
-// // $data = $demo->run($data, $validateParams, $filterParams);
-// $data = $demo->run($data, [], []);
+$params = [
+    'name' => 'phalcon<span>123</span>'
+];
+$paramsValidate = [
+    'name' => ['required', 'alpha_numeric']
+];
+$validate = new PValidation();
+$data = $validate->run($params, $paramsValidate);
+if($data->error){
+    echo "Error: " . $data->msg;
+}else{
+    // Get value
+    echo $data['name'];
+}
+```
 
-// echo "<pre>";
-// var_dump($demo->error);
-// var_dump($demo->msg);
-// var_dump($data);
-// die;
-// var_dump($demo->filter($data, $filterParams));
-// die;
+## Example for Filters
+
+```
+use \PhalconValidation\PValidation;
+
+$params = [
+    'name' => 'phalcon<span>123</span>'
+];
+$paramsFilter = [
+    'name' => ['int']
+];
+$validate = new PValidation();
+$data = $validate->run($params, [], $paramsFilter);
+OR
+$data = $validate->filter($params, $paramsFilter);
+echo $data['name'];
+```
+
+## Example for validations and filters
+
+```
+use \PhalconValidation\PValidation;
+
+$params = [
+    'name' => 'phalcon<span>123</span>'
+];
+$paramsValidate = [
+    'name' => ['required', 'alpha_numeric']
+];
+$paramsFilter = [
+    'name' => ['int']
+];
+$validate = new PValidation();
+$data = $validate->run($params, $paramsValidate, $paramsFilter);
+if($data->error){
+    echo "Error: " . $data->msg;
+}else{
+    // Get value
+    echo $data['name'];
+}
+```
+
+## Rule for validations and filters
+Please, visit website:
+- [Validations](https://docs.phalcon.io/3.4/en/validation#validators)
+- [Filters](https://docs.phalcon.io/3.4/en/filter#types-of-built-in-filters)
