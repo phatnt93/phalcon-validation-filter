@@ -18,8 +18,8 @@ $paramsValidate = [
 ];
 $validate = new PValidation();
 $data = $validate->run($params, $paramsValidate);
-if($data->error){
-    echo "Error: " . $data->msg;
+if($validate->error){
+    echo "Error: " . $validate->msg;
 }else{
     // Get value
     echo $data['name'];
@@ -60,8 +60,8 @@ $paramsFilter = [
 ];
 $validate = new PValidation();
 $data = $validate->run($params, $paramsValidate, $paramsFilter);
-if($data->error){
-    echo "Error: " . $data->msg;
+if($validate->error){
+    echo "Error: " . $validate->msg;
 }else{
     // Get value
     echo $data['name'];
